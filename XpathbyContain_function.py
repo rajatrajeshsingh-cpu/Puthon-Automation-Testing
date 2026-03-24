@@ -7,4 +7,4 @@ driver=webdriver.Chrome(options=options)
 driver.maximize_window()
 driver.get("https://demowebshop.tricentis.com/")
 sleep(2)
-
+driver.find_element(By.XPATH,'//a[contains(text()="Computer")]').click()

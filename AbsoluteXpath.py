@@ -1,0 +1,42 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from time import sleep
+from random import randint
+sum = randint(1,100)
+email='rajatsingh123'+str(sum)+'@gmail.com'
+password='rajat123'
+options=webdriver.ChromeOptions()
+options.add_experimental_option("detach",True)
+driver=webdriver.Chrome(options=options)
+driver.maximize_window()
+driver.get("https://demowebshop.tricentis.com/")
+sleep(2)
+driver.find_element(By.XPATH,"/html/body/div[4]/div[1]/div[1]/div[2]/div[1]/ul/li[1]/a").click()
+
+driver.find_element(By.XPATH,"/html/body/div[4]/div[1]/div[4]/div[2]/form/div/div[2]/div[2]/div[2]/div[1]/div[1]/label").click()
+sleep(2)
+driver.find_element(By.XPATH,"/html/body/div[4]/div[1]/div[4]/div[2]/form/div/div[2]/div[2]/div[2]/div[2]/input").send_keys("Rajat")
+sleep(2)
+driver.find_element(By.XPATH,"/html/body/div[4]/div[1]/div[4]/div[2]/form/div/div[2]/div[2]/div[2]/div[3]/input").send_keys("Singh")
+sleep(2)
+driver.find_element(By.XPATH,"/html/body/div[4]/div[1]/div[4]/div[2]/form/div/div[2]/div[2]/div[2]/div[4]/input").send_keys(email)
+sleep(2)
+driver.find_element(By.XPATH,"/html/body/div[4]/div[1]/div[4]/div[2]/form/div/div[2]/div[3]/div[2]/div[1]/input").send_keys(password)
+sleep(2)
+driver.find_element(By.XPATH,"/html/body/div[4]/div[1]/div[4]/div[2]/form/div/div[2]/div[3]/div[2]/div[2]/input").send_keys(password)
+sleep(2)
+driver.find_element(By.XPATH,"/html/body/div[4]/div[1]/div[4]/div[2]/form/div/div[2]/div[4]/input").click()
+sleep(2)
+driver.find_element(By.XPATH,"/html/body/div[4]/div[1]/div[1]/div[2]/div[1]/ul/li[2]/a").click()
+sleep(2)
+driver.find_element(By.XPATH,"/html/body/div[4]/div[1]/div[1]/div[2]/div[1]/ul/li[2]/a").click()
+sleep(2)
+driver.find_element(By.XPATH,"/html/body/div[4]/div[1]/div[4]/div[2]/div/div[2]/div[1]/div[2]/div[2]/form/div[2]/input").send_keys(email)
+sleep(2)
+driver.find_element(By.XPATH,"/html/body/div[4]/div[1]/div[4]/div[2]/div/div[2]/div[1]/div[2]/div[2]/form/div[3]/input").send_keys(password)
+sleep(2)
+driver.find_element(By.XPATH,"/html/body/div[4]/div[1]/div[4]/div[2]/div/div[2]/div[1]/div[2]/div[2]/form/div[4]/input[1]").click()
+sleep(2)
+driver.find_element(By.XPATH,"/html/body/div[4]/div[1]/div[4]/div[2]/div/div[2]/div[1]/div[2]/div[2]/form/div[5]/input").click()
+sleep(3)
+driver.close()
